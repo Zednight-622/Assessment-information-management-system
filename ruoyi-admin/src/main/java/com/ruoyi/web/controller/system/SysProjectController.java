@@ -23,7 +23,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
  * 课程Controller
  * 
  * @author ruoyi
- * @date 2021-01-03
+ * @date 2021-01-07
  */
 @Controller
 @RequestMapping("/system/project")
