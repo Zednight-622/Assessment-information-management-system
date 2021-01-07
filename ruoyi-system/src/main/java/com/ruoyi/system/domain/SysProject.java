@@ -9,7 +9,7 @@ import com.ruoyi.common.core.domain.BaseEntity;
  * 课程对象 sys_project
  * 
  * @author ruoyi
- * @date 2021-01-03
+ * @date 2021-01-07
  */
 public class SysProject extends BaseEntity
 {
@@ -24,7 +24,7 @@ public class SysProject extends BaseEntity
 
     /** 任课老师 */
     @Excel(name = "任课老师")
-    private Long userId;
+    private String teacherName;
 
     public void setId(Long id) 
     {
@@ -44,14 +44,14 @@ public class SysProject extends BaseEntity
     {
         return name;
     }
-    public void setUserId(Long userId) 
+    public void setTeacherName(String teacherName) 
     {
-        this.userId = userId;
+        this.teacherName = teacherName;
     }
 
-    public Long getUserId() 
+    public String getTeacherName() 
     {
-        return userId;
+        return teacherName;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class SysProject extends BaseEntity
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
             .append("name", getName())
-            .append("userId", getUserId())
+            .append("teacherName", getTeacherName())
             .append("updateTime", getUpdateTime())
             .append("createTime", getCreateTime())
             .toString();

@@ -7,7 +7,7 @@ import com.ruoyi.system.domain.SysProject;
  * 课程Mapper接口
  * 
  * @author ruoyi
- * @date 2021-01-03
+ * @date 2021-01-07
  */
 public interface SysProjectMapper 
 {
