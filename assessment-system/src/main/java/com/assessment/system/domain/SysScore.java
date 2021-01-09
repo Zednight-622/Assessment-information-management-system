@@ -1,9 +1,9 @@
-package com.ruoyi.system.domain;
+package com.assessment.system.domain;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import com.ruoyi.common.annotation.Excel;
-import com.ruoyi.common.core.domain.BaseEntity;
+import com.assessment.common.annotation.Excel;
+import com.assessment.common.core.domain.BaseEntity;
 
 /**
  * 成绩信息对象 sys_score

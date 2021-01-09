@@ -1,4 +1,4 @@
-package com.ruoyi.system.controller;
+package com.assessment.system.controller;
 
 import java.util.List;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.ruoyi.common.annotation.Log;
-import com.ruoyi.common.enums.BusinessType;
-import com.ruoyi.system.domain.SysScore;
-import com.ruoyi.system.service.ISysScoreService;
-import com.ruoyi.common.core.controller.BaseController;
-import com.ruoyi.common.core.domain.AjaxResult;
-import com.ruoyi.common.utils.poi.ExcelUtil;
-import com.ruoyi.common.core.page.TableDataInfo;
+import com.assessment.common.annotation.Log;
+import com.assessment.common.enums.BusinessType;
+import com.assessment.system.domain.SysScore;
+import com.assessment.system.service.ISysScoreService;
+import com.assessment.common.core.controller.BaseController;
+import com.assessment.common.core.domain.AjaxResult;
+import com.assessment.common.utils.poi.ExcelUtil;
+import com.assessment.common.core.page.TableDataInfo;
 
 /**
  * 成绩信息Controller

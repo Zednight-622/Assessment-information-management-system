@@ -1,7 +1,7 @@
-package com.ruoyi.system.mapper;
+package com.assessment.system.mapper;
 
 import java.util.List;
-import com.ruoyi.system.domain.SysScore;
+import com.assessment.system.domain.SysScore;
 
 /**
  * 成绩信息Mapper接口

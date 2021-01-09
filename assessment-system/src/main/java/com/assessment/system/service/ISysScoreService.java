@@ -1,7 +1,7 @@
-package com.ruoyi.system.service;
+package com.assessment.system.service;
 
 import java.util.List;
-import com.ruoyi.system.domain.SysScore;
+import com.assessment.system.domain.SysScore;
 
 /**
  * 成绩信息Service接口
