@@ -1,4 +1,4 @@
-package com.ruoyi.web.controller.system;
+package com.ruoyi.system.controller;
 
 import java.util.List;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -23,7 +23,7 @@ import com.ruoyi.common.core.page.TableDataInfo;
  * 成绩信息Controller
  * 
  * @author ruoyi
- * @date 2021-01-02
+ * @date 2021-01-09
  */
 @Controller
 @RequestMapping("/system/score")

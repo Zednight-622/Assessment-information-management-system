@@ -9,26 +9,26 @@ import com.ruoyi.common.core.domain.BaseEntity;
  * 成绩信息对象 sys_score
  * 
  * @author ruoyi
- * @date 2021-01-02
+ * @date 2021-01-09
  */
 public class SysScore extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
-    /** 成绩Id */
+    /**  */
     private Long id;
 
-    /** 课程Id */
-    @Excel(name = "课程Id")
-    private Long projectId;
+    /**  */
+    @Excel(name = "")
+    private String project;
 
-    /** 成绩 */
-    @Excel(name = "成绩")
+    /**  */
+    @Excel(name = "")
     private Long score;
 
-    /** 学生Id */
-    @Excel(name = "学生Id")
-    private Long studentId;
+    /**  */
+    @Excel(name = "")
+    private String studentName;
 
     public void setId(Long id) 
     {
@@ -39,14 +39,14 @@ public class SysScore extends BaseEntity
     {
         return id;
     }
-    public void setProjectId(Long projectId) 
+    public void setProject(String project) 
     {
-        this.projectId = projectId;
+        this.project = project;
     }
 
-    public Long getProjectId() 
+    public String getProject() 
     {
-        return projectId;
+        return project;
     }
     public void setScore(Long score) 
     {
@@ -57,25 +57,25 @@ public class SysScore extends BaseEntity
     {
         return score;
     }
-    public void setStudentId(Long studentId) 
+    public void setStudentName(String studentName) 
     {
-        this.studentId = studentId;
+        this.studentName = studentName;
     }
 
-    public Long getStudentId() 
+    public String getStudentName() 
     {
-        return studentId;
+        return studentName;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
             .append("id", getId())
-            .append("projectId", getProjectId())
+            .append("project", getProject())
             .append("score", getScore())
             .append("createTime", getCreateTime())
             .append("updateTime", getUpdateTime())
-            .append("studentId", getStudentId())
+            .append("studentName", getStudentName())
             .toString();
     }
 }

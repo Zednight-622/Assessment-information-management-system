@@ -7,7 +7,7 @@ import com.ruoyi.system.domain.SysScore;
  * 成绩信息Service接口
  * 
  * @author ruoyi
- * @date 2021-01-02
+ * @date 2021-01-09
  */
 public interface ISysScoreService 
 {
