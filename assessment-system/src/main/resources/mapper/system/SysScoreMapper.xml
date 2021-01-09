@@ -6,23 +6,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <resultMap type="SysScore" id="SysScoreResult">
         <result property="id"    column="id"    />
-        <result property="projectId"    column="project_id"    />
+        <result property="project"    column="project"    />
         <result property="score"    column="score"    />
         <result property="createTime"    column="create_time"    />
         <result property="updateTime"    column="update_time"    />
-        <result property="studentId"    column="student_id"    />
+        <result property="studentName"    column="student_name"    />
     </resultMap>
 
     <sql id="selectSysScoreVo">
-        select id, project_id, score, create_time, update_time, student_id from sys_score
+        select id, project, score, create_time, update_time, student_name from sys_score
     </sql>
 
     <select id="selectSysScoreList" parameterType="SysScore" resultMap="SysScoreResult">
         <include refid="selectSysScoreVo"/>
         <where>  
-            <if test="projectId != null "> and project_id = #{projectId}</if>
+            <if test="project != null  and project != ''"> and project = #{project}</if>
             <if test="score != null "> and score = #{score}</if>
-            <if test="studentId != null "> and student_id = #{studentId}</if>
+            <if test="studentName != null  and studentName != ''"> and student_name like concat('%', #{studentName}, '%')</if>
         </where>
     </select>
     
@@ -34,29 +34,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <insert id="insertSysScore" parameterType="SysScore" useGeneratedKeys="true" keyProperty="id">
         insert into sys_score
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="projectId != null">project_id,</if>
+            <if test="project != null and project != ''">project,</if>
             <if test="score != null">score,</if>
             <if test="createTime != null">create_time,</if>
             <if test="updateTime != null">update_time,</if>
-            <if test="studentId != null">student_id,</if>
+            <if test="studentName != null and studentName != ''">student_name,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="projectId != null">#{projectId},</if>
+            <if test="project != null and project != ''">#{project},</if>
             <if test="score != null">#{score},</if>
             <if test="createTime != null">#{createTime},</if>
             <if test="updateTime != null">#{updateTime},</if>
-            <if test="studentId != null">#{studentId},</if>
+            <if test="studentName != null and studentName != ''">#{studentName},</if>
          </trim>
     </insert>
 
     <update id="updateSysScore" parameterType="SysScore">
         update sys_score
         <trim prefix="SET" suffixOverrides=",">
-            <if test="projectId != null">project_id = #{projectId},</if>
+            <if test="project != null and project != ''">project = #{project},</if>
             <if test="score != null">score = #{score},</if>
             <if test="createTime != null">create_time = #{createTime},</if>
             <if test="updateTime != null">update_time = #{updateTime},</if>
-            <if test="studentId != null">student_id = #{studentId},</if>
+            <if test="studentName != null and studentName != ''">student_name = #{studentName},</if>
         </trim>
         where id = #{id}
     </update>

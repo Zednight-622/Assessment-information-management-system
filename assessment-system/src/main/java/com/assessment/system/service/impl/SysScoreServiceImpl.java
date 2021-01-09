@@ -1,19 +1,19 @@
-package com.assessment.system.service.impl;
+package com.ruoyi.system.service.impl;
 
 import java.util.List;
-import com.assessment.common.utils.DateUtils;
+import com.ruoyi.common.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.assessment.system.mapper.SysScoreMapper;
-import com.assessment.system.domain.SysScore;
-import com.assessment.system.service.ISysScoreService;
-import com.assessment.common.core.text.Convert;
+import com.ruoyi.system.mapper.SysScoreMapper;
+import com.ruoyi.system.domain.SysScore;
+import com.ruoyi.system.service.ISysScoreService;
+import com.ruoyi.common.core.text.Convert;
 
 /**
  * 成绩信息Service业务层处理
  * 
- * @author  jiangyi xu
- * @date 2021-01-02
+ * @author ruoyi
+ * @date 2021-01-09
  */
 @Service
 public class SysScoreServiceImpl implements ISysScoreService 

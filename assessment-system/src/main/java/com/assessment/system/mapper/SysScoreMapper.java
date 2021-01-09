@@ -1,13 +1,13 @@
-package com.assessment.system.mapper;
+package com.ruoyi.system.mapper;
 
 import java.util.List;
-import com.assessment.system.domain.SysScore;
+import com.ruoyi.system.domain.SysScore;
 
 /**
  * 成绩信息Mapper接口
  * 
- * @author  jiangyi xu
- * @date 2021-01-02
+ * @author ruoyi
+ * @date 2021-01-09
  */
 public interface SysScoreMapper 
 {

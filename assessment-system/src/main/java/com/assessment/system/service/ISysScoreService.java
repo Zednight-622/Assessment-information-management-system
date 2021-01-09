@@ -1,13 +1,13 @@
-package com.assessment.system.service;
+package com.ruoyi.system.service;
 
 import java.util.List;
-import com.assessment.system.domain.SysScore;
+import com.ruoyi.system.domain.SysScore;
 
 /**
  * 成绩信息Service接口
  * 
- * @author  jiangyi xu
- * @date 2021-01-02
+ * @author ruoyi
+ * @date 2021-01-09
  */
 public interface ISysScoreService 
 {
