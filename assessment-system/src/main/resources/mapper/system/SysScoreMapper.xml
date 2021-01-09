@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.assessment.system.mapper.SysScoreMapper">
+    
+    <resultMap type="SysScore" id="SysScoreResult">
+        <result property="id"    column="id"    />
+        <result property="projectId"    column="project_id"    />
+        <result property="score"    column="score"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="studentId"    column="student_id"    />
+    </resultMap>
+
+    <sql id="selectSysScoreVo">
+        select id, project_id, score, create_time, update_time, student_id from sys_score
+    </sql>
+
+    <select id="selectSysScoreList" parameterType="SysScore" resultMap="SysScoreResult">
+        <include refid="selectSysScoreVo"/>
+        <where>  
+            <if test="projectId != null "> and project_id = #{projectId}</if>
+            <if test="score != null "> and score = #{score}</if>
+            <if test="studentId != null "> and student_id = #{studentId}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysScoreById" parameterType="Long" resultMap="SysScoreResult">
+        <include refid="selectSysScoreVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertSysScore" parameterType="SysScore" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_score
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="projectId != null">project_id,</if>
+            <if test="score != null">score,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="studentId != null">student_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="projectId != null">#{projectId},</if>
+            <if test="score != null">#{score},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="studentId != null">#{studentId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysScore" parameterType="SysScore">
+        update sys_score
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="projectId != null">project_id = #{projectId},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="studentId != null">student_id = #{studentId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysScoreById" parameterType="Long">
+        delete from sys_score where id = #{id}
+    </delete>
+
+    <delete id="deleteSysScoreByIds" parameterType="String">
+        delete from sys_score where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
