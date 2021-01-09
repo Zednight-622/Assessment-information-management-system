@@ -1,6 +1,9 @@
-package com.assessment.system.controller;
+package com.assessment.web.controller.system;
 
 import java.util.List;
+
+import com.assessment.common.core.domain.entity.SysUser;
+import com.assessment.common.utils.ShiroUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,8 +39,10 @@ public class SysScoreController extends BaseController
 
     @RequiresPermissions("system:score:view")
     @GetMapping()
-    public String score()
+    public String score(ModelMap modelMap)
     {
+        SysUser sysUser = ShiroUtils.getSysUser();
+        modelMap.put("user", sysUser);
         return prefix + "/score";
     }
 
@@ -54,6 +59,15 @@ public class SysScoreController extends BaseController
         return getDataTable(list);
     }
 
+    @RequiresPermissions("system:score:list")
+    @PostMapping("/list/{id}")
+    @ResponseBody
+    public TableDataInfo listById(@PathVariable("id") int id)
+    {
+        startPage();
+        List<SysScore> list = sysScoreService.selectSysScoreListById(id);
+        return getDataTable(list);
+    }
     /**
      * 导出成绩信息列表
      */

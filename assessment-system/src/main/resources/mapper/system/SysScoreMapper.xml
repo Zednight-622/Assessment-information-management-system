@@ -30,6 +30,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectSysScoreVo"/>
         where id = #{id}
     </select>
+
+    <select id="selectSysScoreListByUserName" parameterType="String" resultMap="SysScoreResult">
+        <include refid="selectSysScoreVo"/>
+        where student_name = #{name}
+    </select>
         
     <insert id="insertSysScore" parameterType="SysScore" useGeneratedKeys="true" keyProperty="id">
         insert into sys_score

@@ -55,10 +55,15 @@
         var editFlag = [[${@permission.hasPermi('system:score:edit')}]];
         var removeFlag = [[${@permission.hasPermi('system:score:remove')}]];
         var prefix = ctx + "system/score";
-
+        var flag = [[${@permission.hasRole('student')}]];
+        var list = "/list"
+        if ("" === flag) {
+            list += "/" + [[${user.getUserId()}]]
+            console.log(list);
+        }
         $(function() {
             var options = {
-                url: prefix + "/list",
+                url: prefix + list,
                 createUrl: prefix + "/add",
                 updateUrl: prefix + "/edit/{id}",
                 removeUrl: prefix + "/remove",
@@ -76,10 +81,10 @@
                     field: 'project',
                     title: '课程'
                 },
-                    {
-                        field: 'studentName',
-                        title: '学生姓名'
-                    },
+                {
+                    field: 'studentName',
+                    title: '学生姓名'
+                },
                 {
                     field: 'score',
                     title: '成绩'

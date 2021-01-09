@@ -1,7 +1,10 @@
 package com.assessment.system.service.impl;
 
 import java.util.List;
+
+import com.assessment.common.core.domain.entity.SysUser;
 import com.assessment.common.utils.DateUtils;
+import com.assessment.system.mapper.SysUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.assessment.system.mapper.SysScoreMapper;
@@ -21,6 +24,8 @@ public class SysScoreServiceImpl implements ISysScoreService
     @Autowired
     private SysScoreMapper sysScoreMapper;
 
+    @Autowired
+    private SysUserMapper sysUserMapper;
     /**
      * 查询成绩信息
      * 
@@ -93,5 +98,11 @@ public class SysScoreServiceImpl implements ISysScoreService
     public int deleteSysScoreById(Long id)
     {
         return sysScoreMapper.deleteSysScoreById(id);
+    }
+
+    @Override
+    public List<SysScore> selectSysScoreListById(int id) {
+        SysUser user = sysUserMapper.selectUserById((long) id);
+        return sysScoreMapper.selectSysScoreListByUserName(user.getUserName());
     }
 }

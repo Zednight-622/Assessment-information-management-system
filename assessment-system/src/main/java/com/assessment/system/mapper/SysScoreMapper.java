@@ -58,4 +58,12 @@ public interface SysScoreMapper
      * @return 结果
      */
     public int deleteSysScoreByIds(String[] ids);
+
+    /**
+     * 根据名字查成绩信息
+     *
+     * @param name
+     * @return 结果
+     */
+    public List<SysScore> selectSysScoreListByUserName(String name);
 }

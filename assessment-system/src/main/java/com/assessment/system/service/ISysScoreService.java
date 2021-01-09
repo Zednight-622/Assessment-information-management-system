@@ -58,4 +58,6 @@ public interface ISysScoreService
      * @return 结果
      */
     public int deleteSysScoreById(Long id);
+
+    List<SysScore> selectSysScoreListById(int id);
 }
