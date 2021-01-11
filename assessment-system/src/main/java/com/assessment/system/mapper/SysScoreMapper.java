@@ -6,7 +6,7 @@ import com.assessment.system.domain.SysScore;
 /**
  * 成绩信息Mapper接口
  * 
- * @author ruoyi
+ * @author jiangyi xu
  * @date 2021-01-09
  */
 public interface SysScoreMapper 
